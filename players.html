@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+{% block content %}
+<h2 class="mb-4 text-warning">🎮 Игроки</h2>
+<div class="row g-4">
+  {% for p in players %}
+  <div class="col-md-4 col-lg-3">
+    <div class="card bg-black border-warning h-100 shadow-sm player-card">
+      <div class="card-body">
+        <h5 class="card-title text-warning">{{ p.nickname }}</h5>
+        <p class="mb-1 text-secondary"><b>Rating 2.0:</b> {{ p.rating_2_0 }}</p>
+        <p class="mb-1"><b>KPR:</b> {{ p.kpr }} | <b>ADR:</b> {{ p.adr }}</p>
+        <p class="text-muted"><b>Команда:</b> {{ p.team_name or 'Без команды' }}</p>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}
