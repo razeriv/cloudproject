@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Редактирование игрока</title>
+</head>
+<body>
+<h1>Редактирование игрока {{ player["nickname"] }}:</h1>
+<form method="post">
+    <label for="nickname">Никнейм:</label>
+    <input type="text" name="nickname" value="{{ player["nickname"] }}"><br/>
+    <label for="rating">Рейтинг:</label>
+    <input type="number" step="any" name="rating" value="{{ player["rating"] }}"><br/>
+    <button type="submit">Сохранить изменения</button>
+</form>
+</body>
+</html>

@@ -1,0 +1,25 @@
+{% extends 'layout.html' %}
+{% block content %}
+<h2 class="text-warning mb-3">🏆 {{ tournament.name }}</h2>
+<p>📍 {{ tournament.location }} | {{ tournament.year }}</p>
+<p>💰 Призовой фонд: {{ tournament.prize_money }}</p>
+
+{% if results %}
+<div class="table-responsive">
+  <table class="table table-dark table-striped mt-3">
+    <thead><tr><th>Место</th><th>Команда</th></tr></thead>
+    <tbody>
+      {% for r in results %}
+      <tr>
+        <td>{{ r.placement }}</td>
+        <td>{{ r.team_name }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% else %}
+<p class="text-muted">Нет данных об участниках.</p>
+{% endif %}
+<a href="/tournaments" class="btn btn-outline-light mt-3">⬅️ Назад</a>
+{% endblock %}
